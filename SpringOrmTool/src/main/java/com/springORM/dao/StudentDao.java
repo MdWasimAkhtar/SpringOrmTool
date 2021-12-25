@@ -32,13 +32,15 @@ public class StudentDao {
 	
 	//update
 	@Transactional
-	public void updateStudent(Student stud) {
+	public void updateStudent(int studId) {
+     Student stud =		this.hibernatetemplate.get(Student.class, studId);
 		  this.hibernatetemplate.update(stud);
 	}
 	
 	//delete
+	@Transactional
 	public void deleteStudent(int studentId) {
-        Student st =(Student)		this.hibernatetemplate.get(Student.class, studentId);
+        Student st = this.hibernatetemplate.get(Student.class, studentId);
         this.hibernatetemplate.delete(st);
 	}
 	

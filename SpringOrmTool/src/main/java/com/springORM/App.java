@@ -86,9 +86,10 @@ public class App
         			       
         			       for(Student i : list) {
         			    	   System.out.println("Name : "+i.getName());
-        			    	   System.out.println("Student Id : "+i.getStudentId());;
+        			    	   System.out.println("Student Id : "+i.getStudentId());
         			    	   System.out.println("City : "+i.getCity());
-        			    	   System.out.println("Branch Name : "+i.getBranch());;
+        			    	   System.out.println("Branch Name : "+i.getBranch());
+        			    	   System.out.println("____________________________________________________");
         			       }
         			  
         			       System.out.println("**************************************************************");
@@ -98,18 +99,31 @@ public class App
         			  System.out.println("Enter Student Id :");
         			  int studenId = Integer.parseInt(br.readLine());
         			  Student  st =studDao.getstudent(studenId);
-        			  
+        			
         			  System.out.println("Name : "+st.getName());
-			    	   System.out.println("Student Id : "+st.getStudentId());;
+			    	   System.out.println("Student Id : "+st.getStudentId());
 			    	   System.out.println("City : "+st.getCity());
-			    	   System.out.println("Branch Name : "+st.getBranch());;
-			            			  
+			    	   System.out.println("Branch Name : "+st.getBranch());
+			    	 
+			    	   System.out.println("*******************************************************"); 			  
+			    	   
         			  break;
         			  
         		  case 4 :
+        			  System.out.println("Enter Student ID to delete");
+        			  int del =Integer.parseInt(br.readLine());
+        			  studDao.deleteStudent(del);
+        			  
+        			  break;
+        		  case 5 :
+        			     System.out.println("Enter Student ID to Update");
+        			     int updateId = Integer.parseInt(br.readLine());
+        			   studDao.updateStudent(updateId);
         			  break;
         		  
         		  }
+        		 
+        			  
         		  
         		  
         		  
