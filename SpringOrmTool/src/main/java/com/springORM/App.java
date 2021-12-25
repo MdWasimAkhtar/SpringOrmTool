@@ -55,6 +55,7 @@ public class App
         			  break;
         			  
         		  case 1 :
+        			  System.out.println("Enter Student Id");
         			  break;
         		   
         		  case 2 :
@@ -80,7 +81,7 @@ public class App
         	  
           }
           
-          
+          System.out.println("Thank You for Using my Application ");
           
     }
 }
