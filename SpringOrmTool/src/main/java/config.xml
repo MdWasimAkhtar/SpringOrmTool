@@ -20,7 +20,7 @@
          <bean  class="org.springframework.jdbc.datasource.DriverManagerDataSource" name="ds">
          
                   <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
-                  <property  name="url"  value="jdbc:mysql://localhost:3306/springOrm"  />
+                  <property  name="url"  value="jdbc:mysql://localhost:3306/springOrm2"  />
                   <property  name="username"  value="root"  />
                   <property name="password"  value="My@Sql1234"  />
          
@@ -44,7 +44,7 @@
            <property name="annotatedClasses">
                <list>
                      <value>com.springORM.Student</value>
-                     <value>com.springORM.Subjects</value>
+                     
                </list>
            </property>
       

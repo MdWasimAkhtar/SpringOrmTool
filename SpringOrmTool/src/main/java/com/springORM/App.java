@@ -2,6 +2,7 @@ package com.springORM;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.List;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -52,16 +53,57 @@ public class App
         		  switch(input) {
         		  
         		  case 0 :
+        			  System.exit(0); // go=false;
         			  break;
         			  
         		  case 1 :
-        			  System.out.println("Enter Student Id");
+        			  System.out.println("Enter Student Id :");
+        			  int uId = Integer.parseInt(br.readLine());
+        			  
+        			  System.out.println("Enter Student Name  :");
+        			  String name =br.readLine();
+        			  
+        			  System.out.println("Enter Student City  :");
+        			  String city = br.readLine();
+        			  
+        			  System.out.println("Enter Student Branch  :");
+        			  String branch = br.readLine();
+        			  
+        			  Student s1 = new Student();
+        			  s1.setStudentId(uId);
+        			  s1.setName(name);
+        			  s1.setCity(city);
+        			  s1.setBranch(branch);
+        			  
+        			  int res = studDao.insert(s1);
+        			  System.out.println(res+"   number of rows effected");
+        			  System.out.println("*************************************************************");
+        			  
         			  break;
         		   
         		  case 2 :
+        			       List<Student> list=  studDao.getAllStudent();
+        			       
+        			       for(Student i : list) {
+        			    	   System.out.println("Name : "+i.getName());
+        			    	   System.out.println("Student Id : "+i.getStudentId());;
+        			    	   System.out.println("City : "+i.getCity());
+        			    	   System.out.println("Branch Name : "+i.getBranch());;
+        			       }
+        			  
+        			       System.out.println("**************************************************************");
         			  break;
         			  
         		  case 3 :
+        			  System.out.println("Enter Student Id :");
+        			  int studenId = Integer.parseInt(br.readLine());
+        			  Student  st =studDao.getstudent(studenId);
+        			  
+        			  System.out.println("Name : "+st.getName());
+			    	   System.out.println("Student Id : "+st.getStudentId());;
+			    	   System.out.println("City : "+st.getCity());
+			    	   System.out.println("Branch Name : "+st.getBranch());;
+			            			  
         			  break;
         			  
         		  case 4 :
